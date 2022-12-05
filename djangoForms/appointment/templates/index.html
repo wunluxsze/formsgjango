@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с формами</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <section class="form">
+        <div class="form__wrap">
+            <div class="form__reg_block">
+                <div class="form__reg_title">
+                    <h2>Make an appointment</h2>
+                </div>
+                <form class="form__inputs_block" method="post" action="postuser/">
+                    {% csrf_token %}
+                    <div class="form__inputs1">
+                        <input type="text" class="input" placeholder="Name" name="Name">
+                        <input type="email" class="input" placeholder="Email" name="Email">
+                    </div>
+                    <div class="form__inputs2">
+                        <input type="tel" class="input" placeholder="Phone Number" name="Phone Number">
+                        <input type="text" class="input" placeholder="Select Service" name="Select Service">
+                    </div>
+                    <div class="form__input_bottom">
+                        <textarea class="input__bottom" name="about" placeholder="Tell us about the car needing service(s)"></textarea>
+                    </div>
+                    <div class="form__btn">
+                        <button type="submit" class="form__button"> Make an Appointment </button>
+                    </div>
+                </form>
+            </div>
+            <div class="form__info">
+                <div class="form__info_title">
+                    <h1>Maxime placeat facere possimus omnis</h1>
+                </div>
+                <div class="form__info_log">
+                    <p>17k</p>
+                </div>
+                <div class="form__info_text">
+                    <p>customers served (and counting)</p>
+                </div>
+    </section>
+</body>
+</html>
